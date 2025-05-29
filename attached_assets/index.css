@@ -1,0 +1,351 @@
+body {
+    font-family: 'Kanit', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #fbeaea, #ffccd5 80%);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+}
+
+/* --- Menu Container --- */
+.menu-container {
+    background: #fff;
+    border-radius: 28px;
+    box-shadow: 0 10px 32px rgba(178,34,34,0.12), 0 2px 8px rgba(0,0,0,0.04);
+    padding: 2.1rem 1.7rem 1.7rem 1.7rem; /* ลด padding ทุกด้านลง */
+    margin: 2.7rem auto 1.7rem auto;      /* ลด margin บน-ล่างลง */
+    max-width: 900px;
+    width: 95%;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.7s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* --- Title & Subtitle --- */
+.menu-title {
+    font-size: 2.7rem;
+    color: #b22222;
+    font-weight: 800;
+    margin-bottom: 0.3rem;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 8px rgba(178,34,34,0.07);
+}
+
+.menu-subtitle {
+    font-size: 1.3rem;
+    color: #a94442;
+    margin-bottom: 2.2rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* --- Character GIF (optional) --- */
+.character-gif {
+    display: block;
+    margin: 0 auto 2rem auto;
+    width: 200px;
+    height: auto;
+    border-radius: 20px;
+    border: 5px solid #b22222;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Menu Options --- */
+.menu-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.7rem 2rem;           /* ลด gap */
+    margin-bottom: 1.7rem;      /* ลด margin-bottom */
+}
+
+.menu-options.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.7rem 2rem;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 1.7rem;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu-btn {
+    width: 126px;
+    height: 126px;
+    padding: 0;
+    font-size: 1.08rem;
+    background: linear-gradient(135deg, #b22222 80%, #ffccd5 100%);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.22s cubic-bezier(.4,2,.6,1);
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(178,34,34,0.10);
+    position: relative;
+    outline: none;
+    text-decoration: none;
+}
+
+.menu-options.card-grid .card-btn {
+    width: 160px;
+    height: 170px;
+    margin: 0;
+}
+
+.menu-options.card-grid .card-btn:nth-child(4),
+.menu-options.card-grid .card-btn:nth-child(5) {
+    grid-column: span 1;
+}
+
+.menu-options.card-grid .card-btn:nth-child(4) {
+    grid-column: 2 / 3;
+}
+
+.menu-options.card-grid .card-btn:nth-child(5) {
+    grid-column: 3 / 4;
+}
+
+.menu-btn i {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: #fff;
+    transition: color 0.2s;
+}
+
+.menu-btn:hover, .menu-btn:focus {
+    background: linear-gradient(135deg, #8b0000 90%, #ffccd5 100%);
+    color: #fff;
+    transform: translateY(-7px) scale(1.04);
+    box-shadow: 0 10px 28px rgba(178,34,34,0.18);
+    text-decoration: none;
+}
+
+.menu-btn:active {
+    background: #b22222;
+    transform: scale(0.97);
+}
+
+.menu-btn[disabled] {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* --- Menu Description --- */
+.menu-description {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.13rem;
+    line-height: 1.85;
+    color: #b22222;
+    padding: 1.2rem 1rem;
+    background: linear-gradient(135deg, #fff7f7 60%, #ffe5ea 100%);
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(178,34,34,0.08);
+    border: 2px solid #ffccd5;
+    transition: background 0.3s;
+}
+
+/* --- Sound Button --- */
+.sound-btn {
+    position: fixed;
+    top: 22px;
+    right: 22px;
+    background: #b22222;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(178,34,34,0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.sound-btn:hover {
+    background: #8b0000;
+}
+
+/* --- Footer --- */
+footer {
+    width: 100%;
+    background: linear-gradient(90deg, #fff7f7 60%, #ffccd5 100%);
+    color: #b22222;
+    text-align: center;
+    font-size: 0.98rem;
+    font-family: 'Kanit', sans-serif;
+    padding: 18px 0 14px 0;
+    margin-top: 38px;
+    border-top: 1.5px solid #ffccd5;
+    letter-spacing: 0.2px;
+    box-sizing: border-box;
+}
+
+/* --- Stat Box (ยอดผู้เล่น/แชร์) --- */
+.stat-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0 auto 7px auto;
+    padding: 0.28rem 0.6rem;
+    background: #fff7f7;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(178,34,34,0.07);
+    border: 1px solid #ffccd5;
+    font-size: 0.91rem;
+    color: #b22222;
+    font-weight: 700;
+    width: fit-content;
+    min-width: 120px;
+    max-width: 320px;
+    position: relative;
+    z-index: 2;
+    transition: background 0.2s;
+}
+
+.stat-box span {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+}
+
+.stat-box #play-count,
+.stat-box #share-count {
+    font-size: 1em;
+    background: linear-gradient(90deg, #ffe5ea 60%, #fff 100%);
+    color: #b22222;
+    border-radius: 6px;
+    padding: 1px 8px;
+    margin-left: 5px;
+    font-weight: 800;
+    min-width: 18px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(178,34,34,0.08);
+    border: 1px solid #ffd6e0;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.stat-box #play-count {
+    background: linear-gradient(90deg, #ffe5ea 60%, #fff 100%);
+    color: #b22222;
+    border: 1px solid #ffd6e0;
+}
+
+.stat-box #share-count {
+    background: linear-gradient(90deg, #e0f7fa 60%, #fff 100%);
+    color: #007c91;
+    border: 1px solid #b2f7ef;
+}
+
+.stat-box #play-count::before {
+    content: "★";
+    color: #ffb300;
+    margin-right: 4px;
+    font-size: 0.95em;
+    vertical-align: middle;
+    opacity: 0.7;
+}
+
+.stat-box #share-count::before {
+    content: "⤴";
+    color: #00bcd4;
+    margin-right: 4px;
+    font-size: 0.95em;
+    vertical-align: middle;
+    opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+    .menu-container {
+        margin: 1rem auto 0 auto;
+        padding: 0.7rem 0.1rem 0.9rem 0.1rem;
+    }
+    .menu-title {
+        font-size: 1.4rem;
+    }
+    .menu-subtitle {
+        font-size: 1rem;
+    }
+    .menu-btn {
+        width: 86px;
+        height: 86px;
+        font-size: 0.92rem;
+        border-radius: 12px;
+    }
+    .menu-btn i {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+    .sound-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+        top: 10px;
+        right: 10px;
+    }
+    .menu-description {
+        font-size: 0.98rem;
+        padding: 0.5rem;
+    }
+    .menu-options.card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 0.7rem 0.7rem;
+        max-width: 220px;
+    }
+    .menu-options.card-grid .card-btn {
+        width: 90px;
+        height: 90px;
+        font-size: 0.95rem;
+        border-radius: 14px;
+    }
+    .menu-options.card-grid .card-btn:nth-child(3) {
+        grid-column: 1 / 3;
+    }
+    .menu-options.card-grid .card-btn:nth-child(4) {
+        grid-column: 1 / 2;
+    }
+    .menu-options.card-grid .card-btn:nth-child(5) {
+        grid-column: 2 / 3;
+    }
+    .stat-box {
+        flex-direction: column;
+        gap: 0.3rem;
+        padding: 0.3rem 0.2rem;
+        font-size: 0.87rem;
+        margin-bottom: 5px;
+        max-width: 92vw;
+    }
+    .stat-box #play-count,
+    .stat-box #share-count {
+        font-size: 0.98em;
+        padding: 1px 7px;
+        min-width: 14px;
+    }
+}

@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --primary: 0 58% 38%; /* #b22222 */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 72% 27%; /* #8b0000 */
+  --secondary-foreground: 0 0% 100%;
+  --accent: 342 100% 90%; /* #ffccd5 */
+  --accent-foreground: 0 58% 38%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 20 14.3% 4.1%;
+  --radius: 1rem; /* 16px */
+  
+  /* Custom Pasulol colors */
+  --pasulol-primary: 0 58% 38%; /* #b22222 */
+  --pasulol-secondary: 0 72% 27%; /* #8b0000 */
+  --pasulol-accent: 342 100% 90%; /* #ffccd5 */
+  --pasulol-accent-light: 342 100% 95%; /* #ffe5e5 */
+  --pasulol-bg-gradient-start: 342 67% 93%; /* #fbeaea */
+  --pasulol-bg-gradient-end: 342 100% 90%; /* #ffccd5 */
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 0 58% 38%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Kanit', sans-serif;
+    background: linear-gradient(135deg, hsl(var(--pasulol-bg-gradient-start)), hsl(var(--pasulol-bg-gradient-end)));
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Kanit', sans-serif;
+  }
+}
+
+@layer components {
+  .pasulol-primary {
+    @apply bg-[hsl(var(--pasulol-primary))] text-white;
+  }
+  
+  .pasulol-secondary {
+    @apply bg-[hsl(var(--pasulol-secondary))] text-white;
+  }
+  
+  .pasulol-accent {
+    @apply bg-[hsl(var(--pasulol-accent))] text-[hsl(var(--pasulol-primary))];
+  }
+  
+  .pasulol-accent-light {
+    @apply bg-[hsl(var(--pasulol-accent-light))] text-gray-800;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+  
+  .slide-in-right {
+    animation: slideInRight 0.5s ease-out;
+  }
+  
+  .bounce-in {
+    animation: bounceIn 0.6s ease-out;
+  }
+  
+  .progress-transition {
+    transition: width 0.3s cubic-bezier(.25,.8,.25,1);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes bounceIn {
+  0% { opacity: 0; transform: scale(0.3); }
+  50% { opacity: 1; transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}

@@ -1,0 +1,148 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasulol Core - แบบทดสอบบุคลิกภาพ</title>
+    <meta name="description" content="ค้นหาว่าคุณเหมือนตัวละครใดในจักรวาล Pasulol ผ่านแบบทดสอบบุคลิกภาพแบบอินเตอร์แอคทีฟ">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pasulol Core">
+    <meta property="og:description" content="แบบทดสอบบุคลิกภาพว่านิสัยคุณเหมือนตัวละครอะไร ในจักรวาล Pasulol">
+    <meta property="og:image" content="/images/logocover.png">
+    <meta property="og:url" content="https://newtoblock.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pasulol Core">
+    <meta name="twitter:description" content="แบบทดสอบบุคลิกภาพว่านิสัยคุณเหมือนตัวละครอะไร ในจักรวาล Pasulol">
+    <meta name="twitter:image" content="./images/logocover.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Google tag (gtag.js) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-189MJTHDHW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-189MJTHDHW');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบทดสอบบุคลิกภาพ Pasulol Core</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="menu-container">
+    <div class="stat-box">
+        <span>ยอดวิว: <span id="play-count">-</span></span>
+        <span>ยอดแชร์: <span id="share-count">-</span></span>
+    </div>
+    <div class="menu-logo" style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 24px 0 28px 0;
+">
+    <div style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.2em;
+    ">
+        <!-- เลโก้ Pasulol สไตล์เรียบง่าย + Animation -->
+        <div style="
+            display: flex;
+            gap: 6px;
+        ">
+            <div class="lego-block lego-bounce" style="background:#b22222;"></div>
+            <div class="lego-block lego-bounce" style="background:#ffccd5; animation-delay: 0.12s;"></div>
+            <div class="lego-block lego-bounce" style="background:#b22222; animation-delay: 0.24s;"></div>
+        </div>
+        <div style="
+            display: flex;
+            gap: 6px;
+            margin-top: 2px;
+        ">
+            <div class="lego-block lego-bounce" style="background:#ffccd5; animation-delay: 0.18s;"></div>
+            <div class="lego-block lego-bounce" style="background:#b22222; animation-delay: 0.30s;"></div>
+            <div class="lego-block lego-bounce" style="background:#ffccd5; animation-delay: 0.06s;"></div>
+        </div>
+        <span style="margin-top: 10px; font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 1.15rem; color: #b22222; letter-spacing: 2px;">
+            PASULOL
+        </span>
+    </div>
+</div>
+
+<style>
+.lego-block {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px 8px 6px 6px;
+    box-shadow: 0 2px 8px #b2222230;
+    display: inline-block;
+}
+.lego-bounce {
+    animation: lego-bounce 1.3s infinite cubic-bezier(.6,0,.4,1);
+}
+@keyframes lego-bounce {
+    0%, 100% { transform: translateY(0);}
+    30% { transform: translateY(-10px);}
+    60% { transform: translateY(0);}
+}
+</style>
+        <h1 class="menu-title">Pasulol Core</h1>
+        <h2 class="menu-subtitle">แบบทดสอบบุคลิกภาพว่านิสัยคุณเหมือนตัวละครอะไร<br>ในจักรวาล Pasulol</h2>
+        <div class="menu-options">
+            <button class="menu-btn" onclick="playClick(); startQuiz()" onmouseover="playHover()" title="เริ่มทำแบบทดสอบ">
+                <i class="fas fa-play"></i>
+                เริ่ม
+            </button>
+            <button class="menu-btn" onclick="playClick(); showInstructions()" onmouseover="playHover()" title="วิธีทำแบบทดสอบ">
+                <i class="fas fa-question-circle"></i>
+                วิธีเล่น
+            </button>
+            <button class="menu-btn" onclick="playClick(); showAbout()" onmouseover="playHover()" title="เกี่ยวกับแบบทดสอบ">
+                <i class="fas fa-info-circle"></i>
+                เกี่ยวกับ
+            </button>
+            <button class="menu-btn" onclick="playClick(); showSupport()" onmouseover="playHover()" title="สนับสนุนผู้พัฒนา">
+                <i class="fas fa-heart"></i>
+                สนับสนุน
+            </button>
+            <a href="results.html" class="menu-btn" style="text-align:center;" onclick="playClick()" onmouseover="playHover()" title="ดูผลลัพธ์ตัวละครทั้งหมด">
+                <i class="fas fa-users"></i>
+                ดูผลลัพธ์
+            </a>
+        </div>
+
+        <div class="menu-description">
+            <p>
+                แบบทดสอบนี้จะช่วยวิเคราะห์บุคลิกภาพของคุณผ่านสถานการณ์สมมติ<br>
+                มีทั้งหมด 27 คำถาม แต่ละคำถามมี 4 ตัวเลือกให้เลือกตอบ
+            </p>
+            <div style="margin-top: 18px; font-size: 0.93rem; color: #b22222; opacity: 0.85; line-height: 1.7;">
+                © 2025 WellGr8 | Pasulol Personality Test Project.<br>
+                All rights reserved.<br>
+                ห้ามคัดลอกหรือดัดแปลงเนื้อหาและแนวคิดโดยไม่ได้รับอนุญาต
+            </div>
+        </div>
+    </div>
+
+    <button id="soundToggle" class="sound-btn" onclick="toggleSound()">
+        <i class="fas fa-volume-up" id="soundIcon"></i>
+    </button>
+
+    <div style="height: 48px;"></div>
+
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="audio.js"></script>
+
+</div> <!-- ปิด .menu-container -->
+</body>
+</html>
